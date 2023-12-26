@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class StudentInsertion {
+class StudentInsertion {
     public void studentInsert(Connection con, Statement stmt, BufferedReader in) {
         try {
             System.out.println("Enter number of rows: ");

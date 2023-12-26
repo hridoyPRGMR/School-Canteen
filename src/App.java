@@ -15,6 +15,7 @@ public class App {
             boolean exit=false;
             StudentInsertion stuIn = new StudentInsertion();
             StudentUpdate stuUp=new StudentUpdate();
+            CustomerInsert cuIn=new CustomerInsert();
 
             System.out.println("User Manual: ");
             System.out.println("Options: 'inSt' -> Student Insertion.");
@@ -31,6 +32,9 @@ public class App {
                         break;
                     case "upSt":
                         stuUp.studentUpdate(con, stmt, in);
+                        break;
+                    case "inCu":
+                        cuIn.customerInsert(con, stmt, in);
                         break;
                     case "exit":
                         exit=true;

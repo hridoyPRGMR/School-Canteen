@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.sql.*;
 
 class StudentUpdate {
-    public static void studentUpdate(Connection con, Statement stmt, BufferedReader in) {
+    public void studentUpdate(Connection con, Statement stmt, BufferedReader in) {
         try {
             System.out.println("Not: If you are done with update work, enter '0'");
 
