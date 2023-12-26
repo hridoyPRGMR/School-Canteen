@@ -12,22 +12,36 @@ public class App {
         try (Connection con = DriverManager.getConnection(url, username, password);
              Statement stmt = con.createStatement()) {
 
+            boolean exit=false;
             StudentInsertion stuIn = new StudentInsertion();
+            StudentUpdate stuUp=new StudentUpdate();
 
             System.out.println("User Manual: ");
-            System.out.println("Options: 'in' -> Student Insertion");
+            System.out.println("Options: 'inSt' -> Student Insertion.");
+            System.out.println("Options: 'upSt' -> Student Info Update");
+            System.out.println("Options: 'exit' ->Close program.");
 
-            String option = in.readLine();
+            while(!exit){
+                System.out.println("Enter Command: ");
+                String option = in.readLine();
 
-            switch (option) {
-                case "in":
-                    stuIn.studentInsert(con, stmt, in);
-                    break;
-
-                default:
-                    System.out.println("Invalid option. Please try again.");
-                    break;
+                switch (option) {
+                    case "inSt":
+                        stuIn.studentInsert(con, stmt, in);
+                        break;
+                    case "upSt":
+                        stuUp.studentUpdate(con, stmt, in);
+                        break;
+                    case "exit":
+                        exit=true;
+                        System.out.println("Exiting program...");
+                        break;
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                        break;
+                }
             }
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
