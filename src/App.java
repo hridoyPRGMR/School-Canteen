@@ -15,11 +15,14 @@ public class App {
             boolean exit=false;
             StudentInsertion stuIn = new StudentInsertion();
             StudentUpdate stuUp=new StudentUpdate();
+            StudentDel stuDel=new StudentDel();
             CustomerInsert cuIn=new CustomerInsert();
 
             System.out.println("User Manual: ");
             System.out.println("Options: 'inSt' -> Student Insertion.");
             System.out.println("Options: 'upSt' -> Student Info Update");
+            System.out.println("Options: 'delSt' -> Delete Student Info");
+            System.out.println("Options: 'inCu' -> Customer Info Update");
             System.out.println("Options: 'exit' ->Close program.");
 
             while(!exit){
@@ -32,6 +35,9 @@ public class App {
                         break;
                     case "upSt":
                         stuUp.studentUpdate(con, stmt, in);
+                        break;
+                    case "delSt":
+                        stuDel.studentDel(con, stmt, in);
                         break;
                     case "inCu":
                         cuIn.customerInsert(con, stmt, in);
